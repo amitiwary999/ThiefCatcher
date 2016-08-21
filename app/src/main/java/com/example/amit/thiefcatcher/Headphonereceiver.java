@@ -16,22 +16,19 @@ import com.google.android.gms.awareness.fence.FenceState;
 public class Headphonereceiver extends BroadcastReceiver {
     MediaPlayer song;
     int check=0;
-    private SharedPreferences myPrefs;
     private static final int MODE_WORLD_READABLE = 1;
     @Override
     public void onReceive(Context context, Intent intent) {
         FenceState fenceState = FenceState.extract(intent);
-        myPrefs = context.getSharedPreferences("myPrefs", MODE_WORLD_READABLE);
-        String headphoneMode=myPrefs.getString("mode", "not retrieved");
-        if(headphoneMode.equals("on")) {
-
+       SharedPreferences myPrefs = context.getSharedPreferences("com.example.amit.thiefcatcher",context.MODE_PRIVATE);
+        boolean headphonemode=myPrefs.getBoolean("isChecked",true);
+        if(headphonemode) {
             if (TextUtils.equals(fenceState.getFenceKey(), "headphoneFenceKey")) {
                 switch (fenceState.getCurrentState()) {
                     case FenceState.TRUE:
                         if (check == 1) {
                             song.release();
                         }
-
                         break;
                     case FenceState.FALSE:
                         song = MediaPlayer.create(context, R.raw.sng);

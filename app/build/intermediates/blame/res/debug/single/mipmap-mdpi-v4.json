@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/amit/Thiefcatcher/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/frontt.png",
+        "source": "/home/amit/Thiefcatcher/app/src/main/res/mipmap-mdpi/frontt.png"
+    },
+    {
         "merged": "/home/amit/Thiefcatcher/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
         "source": "/home/amit/Thiefcatcher/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }

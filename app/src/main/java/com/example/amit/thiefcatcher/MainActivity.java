@@ -1,37 +1,29 @@
 package com.example.amit.thiefcatcher;
 
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
-import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.widget.CompoundButton;
+import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.awareness.Awareness;
 import com.google.android.gms.awareness.fence.AwarenessFence;
-import com.google.android.gms.awareness.fence.FenceState;
 import com.google.android.gms.awareness.fence.FenceUpdateRequest;
 import com.google.android.gms.awareness.fence.HeadphoneFence;
 import com.google.android.gms.awareness.state.HeadphoneState;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.ResultCallbacks;
 import com.google.android.gms.common.api.Status;
 
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences myPrefs;
-    private SharedPreferences.Editor editor;
+   // private SharedPreferences.Editor editor;
     private static final String FENCE_RECEIVER_ACTION = "FENCE_RECEIVE";
     private GoogleApiClient mGoogleApiClient;
     private Switch myswitch;
@@ -57,24 +49,18 @@ public class MainActivity extends AppCompatActivity {
                 10001,
                 intent,
                 0);
-       // txt=(TextView)findViewById(R.id.txt);
-        myPrefs = this.getSharedPreferences("myPrefs", MODE_PRIVATE);
-        editor=myPrefs.edit();
-        editor.commit();
         myswitch=(Switch)findViewById(R.id.switch1);
-        myswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        SharedPreferences myPrefs=getSharedPreferences("com.example.amit.thiefcatcher",MODE_PRIVATE);
+        myswitch.setChecked(myPrefs.getBoolean("isChecked",true));
+        myswitch.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if(isChecked){
-                    editor.putString("mode", "on");
-                    editor.commit();
-                }else{
-                    editor.putString("mode", "off");
-                    editor.commit();
-                }
-
+            public void onClick(View view) {
+                SharedPreferences.Editor editor=getSharedPreferences("com.example.amit.thiefcatcher",MODE_PRIVATE).edit();
+                editor.putBoolean("isChecked",myswitch.isChecked());
+                editor.commit();
             }
         });
+
     }
     private void registerFences() {
         // Create a fence.
@@ -89,10 +75,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onResult(@NonNull Status status) {
                         if (status.isSuccess()) {
                             Toast.makeText(MainActivity.this,"Successfully registered headphone",Toast.LENGTH_LONG).show();
-                          // txt.setText("Headphone successfully registered");
                         } else {
                             Toast.makeText(MainActivity.this,"Headphone not registered ",Toast.LENGTH_LONG).show();
-                           // txt.setText("Headphone not registered");
                         }
                     }
                 });
