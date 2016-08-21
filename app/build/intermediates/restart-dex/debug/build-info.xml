@@ -4,35 +4,30 @@
     api-level="21"
     density="xhdpi"
     format="7"
-    timestamp="18908153374214"
+    timestamp="21527838442262"
     token="-1829110301722348455" >
 
     <task
         name="javac"
-        duration="680" />
+        duration="333" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="85" />
+        duration="115" />
     <task
         name="verifier"
-        duration="1" />
+        duration="9" />
 
     <artifact
-        location="/home/amit/Thiefcatcher/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-        type="DEX" />
+        location="/home/amit/Thiefcatcher/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="16787667020240" >
+    <build timestamp="21527838442262" >
         <artifact
             location="/home/amit/Thiefcatcher/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="18908153374214" >
-        <artifact
-            location="/home/amit/Thiefcatcher/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

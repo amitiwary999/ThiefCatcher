@@ -28,9 +28,9 @@ import com.google.android.gms.common.api.Status;
 public class MainActivity extends AppCompatActivity {
     private static final String FENCE_RECEIVER_ACTION = "FENCE_RECEIVE";
     private GoogleApiClient mGoogleApiClient;
-    MediaPlayer oursong;
+   // MediaPlayer oursong;
     private Headphonereceiver receiver;
-  //  private HeadphoneFenceBroadcastReceiver fenceReceiver;
+  // private HeadphoneFenceBroadcastReceiver fenceReceiver;
     private PendingIntent mFencePendingIntent;
     TextView txt;
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         mGoogleApiClient.connect();
         receiver=new Headphonereceiver();
-        //fenceReceiver = new HeadphoneFenceBroadcastReceiver();
+       // fenceReceiver = new HeadphoneFenceBroadcastReceiver();
         Intent intent = new Intent(FENCE_RECEIVER_ACTION);
 
         mFencePendingIntent = PendingIntent.getBroadcast(MainActivity.this,
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void unregisterFence() {
+  /*  private void unregisterFence() {
         Awareness.FenceApi.updateFences(
                 mGoogleApiClient,
                 new FenceUpdateRequest.Builder()
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 txt.setText("Fence " + "headphoneFenceKey" + " could NOT be removed.");
             }
         });
-    }
+    }*/
     @Override
     protected void onStart() {
         super.onStart();
@@ -102,49 +102,13 @@ public class MainActivity extends AppCompatActivity {
         registerReceiver(receiver, new IntentFilter(FENCE_RECEIVER_ACTION));
     }
 
-    @Override
+   /* @Override
     protected void onStop() {
         super.onStop();
         unregisterFence();
-        unregisterReceiver(receiver);
-    }
+        unregisterReceiver(fenceReceiver);
+    }*/
 
 }
-/*class HeadphoneFenceBroadcastReceiver extends BroadcastReceiver {
-MediaPlayer song;
-    int check=0;
-   // private Context context;
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        FenceState fenceState = FenceState.extract(intent);
 
-       // Log.d(TAG, "Fence Receiver Received");
-
-        if (TextUtils.equals(fenceState.getFenceKey(), "headphoneFenceKey")) {
-            switch (fenceState.getCurrentState()) {
-                case FenceState.TRUE:
-                  //  Log.i(TAG, "Fence > Headphones are plugged in.");
-                    if(check==1){
-                        song.release();
-                    }
-
-                    break;
-                case FenceState.FALSE:
-                   // Log.i(TAG, "Fence > Headphones are NOT plugged in.");
-                    song=MediaPlayer.create(context,R.raw.sng);
-                    song.start();
-                    check=1;
-                    break;
-                case FenceState.UNKNOWN:
-                   // Log.i(TAG, "Fence > The headphone fence is in an unknown state.");
-                    song=MediaPlayer.create(context,R.raw.sng);
-                    song.start();
-                    check=1;
-                    break;
-            }
-        }
-
-    }
-
-}*/
 
