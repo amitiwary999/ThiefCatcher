@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/amit/Thiefcatcher/app/build/intermediates/res/merged/debug/raw/song.mp3",
+        "source": "/home/amit/Thiefcatcher/app/src/main/res/raw/song.mp3"
+    },
+    {
+        "merged": "/home/amit/Thiefcatcher/app/build/intermediates/res/merged/debug/raw/sng.mp3",
+        "source": "/home/amit/Thiefcatcher/app/src/main/res/raw/sng.mp3"
+    }
+]
