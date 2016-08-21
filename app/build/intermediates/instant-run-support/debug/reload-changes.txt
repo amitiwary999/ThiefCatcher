@@ -1,0 +1,15 @@
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/Headphonereceiver$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$style$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$raw$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$id$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/MainActivity$1$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/MainActivity$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$integer$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$layout$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$styleable$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$id$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$mipmap$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/R$string$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/google/android/gms/R$id$override.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
+CHANGED,/home/amit/Thiefcatcher/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/amit/thiefcatcher/MainActivity$2$override.class
